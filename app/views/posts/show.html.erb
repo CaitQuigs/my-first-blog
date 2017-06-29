@@ -1,16 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @post.title %>
+  <h2><%= @post.title %></h2>
 </p>
 
 <p>
-  by <%= @post.user.username %>
+  By: <%= image_tag @post.user.avatar.thumb %> <%= @post.user.username %>
 </p>
 
 <p>
-  <strong>Blog entry:</strong>
   <%= @post.blog_entry %>
 </p>
 
