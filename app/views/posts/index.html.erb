@@ -15,9 +15,9 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
-        <td><%= post.user.username %></td>
-        <td><%= post.blog_entry %></td>
+        <td><%= post.title.html_safe %></td>
+        <td><em><%= link_to post.user.username, user_posts_path(name: post.user.username) %></em></td>
+        <td><%= post.blog_entry.html_safe %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,5 +27,7 @@
 </table>
 
 <br>
+
+<%= paginate @posts %> 
 
 <%= link_to 'New Post', new_post_path %>

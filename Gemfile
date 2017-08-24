@@ -14,8 +14,12 @@ gem 'sqlite3'
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'carrierwave'
+gem 'mini_magick'
 gem 'bootstrap-sass'
+gem 'font-awesome-rails'
 gem 'jquery-rails'
+gem 'kaminari'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -32,8 +36,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', platforms: :ruby
 # gem 'bcrypt-ruby', '3.1.5', :require => 'bcrypt'
-gem 'carrierwave', '~> 1.0'
-gem 'mini_magick'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

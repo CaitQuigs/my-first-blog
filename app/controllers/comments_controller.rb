@@ -7,6 +7,10 @@ class CommentsController < ApplicationController
     @comments = Comment.all
   end
 
+  def user_comments
+    @user = User.find(params[:id])
+  end
+
   # GET /comments/1
   # GET /comments/1.json
   def show

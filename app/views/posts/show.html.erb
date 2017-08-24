@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <h2><%= @post.title %></h2>
+  <h2><%= @post.title.html_safe %></h2>
 </p>
 
 <p>
-  By: <%= image_tag @post.user.avatar.thumb %> <%= @post.user.username %>
+  By: <%= image_tag @post.user.avatar.thumb %> <em><%= link_to @post.user.username, user_posts_path(name: @post.user.username) %></em>
 </p>
 
 <p>
-  <%= @post.blog_entry %>
+  <%= @post.blog_entry.html_safe %>
 </p>
 
 <p>
@@ -21,8 +21,8 @@
 
 	<% @post.comments.each do |comment| %>
 		<p>
-			<%= comment.user.username %> said...<br />
-			<%= comment.comment_entry %>
+			<%= link_to comment.user.username, user_posts_path(name:comment.user.username) %> said...<br />
+			<%= comment.comment_entry.html_safe %>
 		</p>
 	<% end %>
 

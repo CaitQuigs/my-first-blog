@@ -1,0 +1,30 @@
+<h1>All Comments by <%= @user.username %></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Blog #</th>
+      <th>Comment</th>
+      <th colspan="3">Options</th>
+      </tr>
+  </thead>
+
+  <tbody>
+    <% @user.comments.each do |comment| %>
+      <tr>
+        <td><%= comment.post_id %></td>
+        <td><%= comment.comment_entry.html_safe %></td>
+        <td><%= link_to 'Show', comment, class: "btn btn-info" %> 
+          <% if current_user.id == comment.user_id %>
+            <%= link_to 'Edit', edit_comment_path(comment), class: "btn btn-warning" %>
+            <%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'Back to All Posts', posts_path %>
