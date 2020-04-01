@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   resources :comments
   resources :posts
@@ -8,6 +9,6 @@ Rails.application.routes.draw do
   get 'user_posts' => 'posts#user_posts'
 
   get 'user_comments' => 'comments#user_comments'
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
